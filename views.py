@@ -31,6 +31,7 @@ def cached_stack(request):
     return render(request,"mfc/stack.html", {'PosPages':PosPages,'NegPages':NegPages})
 
 def stack(request):
+    os.system('python /home/matt/src/Alchemy/alchemyapi_python/stackplot.py')
     os.system('python /home/matt/src/Alchemy/alchemyapi_python/search.py')
     g = open('/home/matt/src/Alchemy/alchemyapi_python/posscores.txt', 'r')
     lines0 = g.readlines()
