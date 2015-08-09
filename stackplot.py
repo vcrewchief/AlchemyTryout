@@ -6,9 +6,9 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt 
 import os
 
-f = open('negscores.txt', 'r')
+f = open('/home/matt/src/Alchemy/alchemyapi_python/negscores.txt', 'r')
 negs = f.readlines()
-g = open('posscores.txt', 'r')
+g = open('/home/matt/src/Alchemy/alchemyapi_python/posscores.txt', 'r')
 poss = g.readlines()
 
 NEGS = []
