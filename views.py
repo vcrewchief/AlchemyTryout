@@ -28,7 +28,11 @@ def cached_stack(request):
     h = open('/home/matt/src/Alchemy/alchemyapi_python/negscores.txt', 'r')
     lines1 = h.readlines()
     NegPages = len(lines1)
-    return render(request,"mfc/stack.html", {'PosPages':PosPages,'NegPages':NegPages})
+    i = open('/home/matt/src/Alchemy/alchemyapi_python/posneg.txt', 'r')
+    lines2 = i.readlines()
+    mostneg = str(lines2[0][:-1])
+    mostpos = str(lines2[1][:-1])
+    return render(request,"mfc/stack.html", {'PosPages':PosPages,'mostpos':mostpos,'NegPages':NegPages,'mostneg':mostneg})
 
 def stack(request):
     os.system('python /home/matt/src/Alchemy/alchemyapi_python/search.py')
@@ -39,5 +43,10 @@ def stack(request):
     h = open('/home/matt/src/Alchemy/alchemyapi_python/negscores.txt', 'r')
     lines1 = h.readlines()
     NegPages = len(lines1)
-    return render(request,"mfc/stack.html", {'PosPages':PosPages,'NegPages':NegPages})
+    i = open('/home/matt/src/Alchemy/alchemyapi_python/posneg.txt', 'r')
+    lines2 = i.readlines()
+    mostneg = str(lines2[0][:-1])
+    mostpos = str(lines2[1][:-1])
+    return render(request,"mfc/stack.html", {'PosPages':PosPages,'mostpos':mostpos,'NegPages':NegPages,'mostneg':mostneg})
+
 
