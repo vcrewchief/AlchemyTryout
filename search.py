@@ -52,4 +52,25 @@ for id in ids:
     f.close()
     os.system('rm /home/matt/src/Alchemy/alchemyapi_python/text.txt')
     f = open('/home/matt/src/Alchemy/alchemyapi_python/text.txt','a')
-
+fneg.close()
+fneg = open('/home/matt/src/Alchemy/alchemyapi_python/negscores.txt', 'r')
+neglist = fneg.readlines()
+mostneg = 0
+for i in neglist:
+    i = float(i[:-1])
+mostneg = min(neglist)
+for z,r in enumerate(neglist):
+    if r == mostneg:
+        fposneg.write(str(ids[z])+'\n')
+        break
+fpos.close()
+fpos = open('/home/matt/src/Alchemy/alchemyapi_python/posscores.txt', 'r')
+poslist = fpos.readlines()
+mostpos = 0
+for w in poslist:
+    w = float(w[:-1])
+mostpos = max(poslist)
+for f,s in enumerate(poslist):
+    if s == mostpos:
+        fposneg.write(str(ids[f])+'\n')
+        break
